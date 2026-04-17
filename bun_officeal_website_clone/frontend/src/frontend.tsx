@@ -7,12 +7,20 @@
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+// import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router";
 import { App } from "./App";
+import Build from "./routes/build";
 
 const elem = document.getElementById("root")!;
 const app = (
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/build" element={<Build />} />
+      </Routes>
+    </BrowserRouter>
   </StrictMode>
 );
 
