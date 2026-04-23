@@ -7,7 +7,7 @@ import "./style/home.css"
 
 export function App() {
   return (
-    <div >
+    <div className="bg-(--bg) text-(--text) ">
       <Navbar/>
       <Hero_/>
       <Toolkit/>

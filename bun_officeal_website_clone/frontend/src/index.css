@@ -1,2 +1,16 @@
 @import "tailwindcss";
 
+:root{
+    --bg :#14151A;/* background color */  
+    --text : #ffffff;    /* primary text */
+};
+
+@layer utilities {
+    /* flex box */
+    .flex-center {
+        @apply flex flex-col items-center;
+    }
+    .flex-row-center{
+        @apply flex flex-row items-center;
+    }
+}
