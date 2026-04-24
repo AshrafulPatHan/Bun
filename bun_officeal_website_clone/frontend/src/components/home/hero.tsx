@@ -1,6 +1,7 @@
 import "@/style/home.css";
 import logos_ from "@/assets/image/logo-bar.png";
 import SharedLayoutAnimation from "@/ui/Shared_layout";
+import Hero_Install_bun from "@/ui/Hero_install_bun";
 
 export default function Hero_() {
     return (
@@ -11,9 +12,7 @@ export default function Hero_() {
                     <h1 className="text-5xl font-bold mt-4 mb-8">Bun is a fast JavaScript package manager</h1>
                     <p className="text-xl text-[#D1D5DB] ">Bun is a fast, incrementally adoptable all-in-one JavaScript, TypeScript & JSX toolkit. Use individual tools like bun test or bun install in Node.js projects, or adopt the complete stack with a fast JavaScript runtime, bundler, test runner, and package manager built in. Bun aims for 100% Node.js compatibility.</p>
                     <p className="text-xl font-bold">Install Bun v1.3.12</p>
-                    <div>
-                        {/* there are a window */}
-                    </div>
+                    <Hero_Install_bun/>
                     <div>
                         <p> USED BY</p>
                         <img src={logos_} alt="company" />
