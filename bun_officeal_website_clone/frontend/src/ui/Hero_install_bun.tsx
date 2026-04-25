@@ -2,13 +2,22 @@ import copyI from "@/assets/icon/copy.svg"
 import { useState } from "react"
 
 export default function Hero_Install_bun() {
+    let ButtonOn = "bg-[#F472B6] border-2 border-b-0 border-[#F472B6] text-base py-2 px-4 rounded-t-md"
+    let ButtonOff = "bg-[#3b3f4b] border-2 border-b-0 border-[#282A36] text-base py-2 px-4 rounded-t-md"
+
     const [scriptI,setScriptI] = useState("curl -fsSL https://bun.sh/install | bash") 
+    const [onButton,setOnButton] = useState(ButtonOn)
+    const [offButton,setOffButton] = useState(ButtonOff)
 
     const handelInstallBun = (id:number) =>{
         if (id === 1) {
             setScriptI("curl -fsSL https://bun.sh/install | bash")
+            setOnButton(ButtonOn)
+            setOffButton(ButtonOff)
         }else if (id === 2) {
             setScriptI(`powershell -c "irm bun.sh/install.ps1 | iex"`)
+            setOnButton(ButtonOff)
+            setOffButton(ButtonOn)
         }else{
             alert("error is comming")
         }
@@ -19,10 +28,10 @@ export default function Hero_Install_bun() {
             <div className="flex flex-row items-center">
                 <button 
                 onClick={()=> handelInstallBun(1)}
-                className="bg-[#F472B6] border-2 border-b-0 border-[#F472B6] text-base py-2 px-4 rounded-t-md ">Linux & macOS</button>
+                className={onButton}>Linux & macOS</button>
                 <button 
                 onClick={()=> handelInstallBun(2)}
-                className="bg-[#3b3f4b] border-2 border-b-0 border-[#282A36] text-base py-2 px-4 rounded-t-md ">Windows</button>
+                className={offButton}>Windows</button>
                 <a className="ml-4 text-[#8a8e9c] " href="https://bun.sh/install" target="_blank" rel="noopener noreferrer">View install script</a>
             </div>
             {/* script section */}
